@@ -2,7 +2,10 @@ package ua.edu.ucu.tries;
 
 import ua.edu.ucu.queue.Queue;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Stack;
+
 
 public class RWayTrie implements Trie {
 

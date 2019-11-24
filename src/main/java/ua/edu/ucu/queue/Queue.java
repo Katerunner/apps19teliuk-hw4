@@ -1,7 +1,5 @@
 package ua.edu.ucu.queue;
 
-import ua.edu.ucu.queue.ImmutableLinkedList;
-
 public class Queue {
 
     private ImmutableLinkedList list;

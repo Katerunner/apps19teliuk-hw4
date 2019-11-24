@@ -55,8 +55,7 @@ public class PrefixMatches {
         ArrayList<Integer> lengthCache = new ArrayList<>();
         ArrayList<String> preResult = new ArrayList<>();
         int numberOfDiff = 0;
-        for (String word :
-                mainTrie.wordsWithPrefix(pref)) {
+        for (String word : mainTrie.wordsWithPrefix(pref)) {
             if (lengthCache.contains(word.length())) {
                 preResult.add(word);
             } else {
@@ -68,7 +67,8 @@ public class PrefixMatches {
                 break;
             }
         }
-        String[] result = Arrays.copyOf(preResult.toArray(), preResult.size(), String[].class);
+        String[] result = Arrays.copyOf(preResult.toArray(),
+                preResult.size(), String[].class);
         return Arrays.asList(result);
 //        return () -> Arrays.stream(result).iterator();
     }
