@@ -48,14 +48,25 @@ public class RWayTrieTest {
         assertTrue(tree.contains("qwe"));
         assertTrue(tree.contains("qwerty"));
         assertTrue(tree.contains("qwort"));
+        assertFalse(tree.contains("Bratishka"));
     }
 
     @Test
-    public void testDeleteSize() {
+    public void testAddDeleteSize() {
         assertEquals(tree.size(), 0);
         tree.add(t1);
         assertEquals(tree.size(), 1);
         tree.delete(t1.term);
         assertEquals(tree.size(), 0);
+        tree.add(t2);
+        assertEquals(tree.size(), 1);
+        tree.delete("Slyshysh");
+        assertEquals(tree.size(), 1);
+        tree.add(new Tuple("qw", 2));
+        assertEquals(tree.size(), 1);
+        tree.add(t1);
+        assertEquals(tree.size(), 2);
+        tree.delete(t1.term);
+        assertEquals(tree.size(), 1);
     }
 }
