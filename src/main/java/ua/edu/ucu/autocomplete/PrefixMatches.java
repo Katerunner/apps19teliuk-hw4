@@ -69,7 +69,8 @@ public class PrefixMatches {
             }
         }
         String[] result = Arrays.copyOf(preResult.toArray(), preResult.size(), String[].class);
-        return () -> Arrays.stream(result).iterator();
+        return Arrays.asList(result);
+//        return () -> Arrays.stream(result).iterator();
     }
 
     public int size() {
