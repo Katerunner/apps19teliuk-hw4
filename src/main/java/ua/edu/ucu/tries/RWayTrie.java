@@ -139,9 +139,9 @@ public class RWayTrie implements Trie {
             }
         }
         Object[] arrQueue = preResQueue.toArray();
-        String[] result = Arrays.copyOf(arrQueue, arrQueue.length, String[].class);
-        return Arrays.asList(result);
-//        return () -> Arrays.stream(result).iterator();
+        String[] result = Arrays.copyOf(arrQueue,
+                arrQueue.length, String[].class);
+        return () -> Arrays.stream(result).iterator();
     }
 
     private void fillQueue(RWayTrie curTree, String pre, Queue queue) {
@@ -163,7 +163,7 @@ public class RWayTrie implements Trie {
         for (int i = 0; i < children.size(); i++) {
             res += children.get(i).size();
         }
-        if (numOfLettersAbove == 0) {
+        if (numOfLettersAbove != 0) {
             res += 1;
         }
         return res;
